@@ -31,9 +31,15 @@ This repository includes:
    ```
 
 3. **Access MongoDB**:
+   - Install `mongosh`:
+     ```bash
+      curl -fsSL https://pgp.mongodb.com/server-6.0.asc | sudo gpg --dearmor -o /usr/share/keyrings/mongodb-server-keyring.gpg
+      echo "deb [signed-by=/usr/share/keyrings/mongodb-server-keyring.gpg] https://repo.mongodb.org/apt/ubuntu $(lsb_release -cs)/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+      sudo apt update && sudo apt install -y mongodb-mongosh
+     ```
    - Connect using a MongoDB client or CLI:
      ```bash
-     mongo --host localhost --port 27017 -u admin -p admin
+     mongosh "mongodb://admin:admin@localhost:27017/?authSource=admin"
      ```
    - Alternatively, use a MongoDB GUI like **Compass** and connect to `mongodb://admin:admin@localhost:27017/`.
 
