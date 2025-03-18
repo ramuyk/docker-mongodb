@@ -43,12 +43,6 @@ This repository includes:
      ```
    - Alternatively, use a MongoDB GUI like **Compass** and connect to `mongodb://admin:admin@localhost:27017/`.
 
-4. **Stopping the Container**:
-   To stop and remove the running container, use:
-   ```bash
-   docker compose down
-   ```
-
 ## Configuration Details
 
 - **Port Mapping**: The container exposes MongoDB on `localhost:27017`. Modify the `ports` section in `docker-compose.yml` if needed.
